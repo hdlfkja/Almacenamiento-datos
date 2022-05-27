@@ -1,0 +1,52 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, 
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+body {
+    font-size: 1.4rem;
+}
+
+img {
+    display: block;
+}
+
+p {
+    color: v.$azulPalido;
+    font-family: v.$fuentePrincipal;
+}
+
+.contenedor-flex {
+    background-image: url(../../images/bg-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    @include m.tablet {
+        background-color: v.$azulMuyOscuruo;
+        background-image: url(../../images/bg-desktop.png);
+        background-size: unset;
+        background-position: left bottom;
+    }
+}
+
+.contenedor {
+    width: 85%;
+    max-width: 90rem;
+
+    @include m.tablet {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 2rem;
+    }
+}

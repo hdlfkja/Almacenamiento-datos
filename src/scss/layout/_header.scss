@@ -1,0 +1,73 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.header-contenedor {
+    background-color: v.$azulOscuro;
+    padding: 4rem 3rem;
+    border-radius: 1rem 5rem 1rem 1rem;
+    -webkit-border-radius: 1rem 5rem 1rem 1rem;
+    -moz-border-radius: 1rem 5rem 1rem 1rem;
+    -ms-border-radius: 1rem 5rem 1rem 1rem;
+    -o-border-radius: 1rem 5rem 1rem 1rem;
+    margin-bottom: 1.5rem;
+
+    @include m.tablet {
+        margin-bottom: 0;
+        border-radius: 1rem 10rem 1rem 1rem;
+        -webkit-border-radius: 1rem 10rem 1rem 1rem;
+        -moz-border-radius: 1rem 10rem 1rem 1rem;
+        -ms-border-radius: 1rem 10rem 1rem 1rem;
+        -o-border-radius: 1rem 10rem 1rem 1rem;
+        padding-right: 13rem;
+        padding-left: 4rem;
+}
+
+    .titulo {
+        margin-bottom: 2rem;
+
+        @include m.tablet {
+            margin-bottom: 3rem;
+
+        }
+    }
+}
+
+.titulo {
+    @include m.tablet {
+        
+        img {
+            width: 16rem;
+        }
+    }
+}
+
+.iconos {
+    display: flex;
+    gap: 2rem;
+
+    .icono {
+        background-color: v.$azulMuyOscuruo;
+        padding: 1rem 1.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1rem;
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        -ms-border-radius: 1rem;
+        -o-border-radius: 1rem;
+
+        @include m.tablet {
+            padding: 1.1rem 1.4rem;
+        }
+    }
+}
+
+.icono {
+    
+    @include m.tablet {
+        img {
+            width: 2.5rem;
+        }
+    }
+}

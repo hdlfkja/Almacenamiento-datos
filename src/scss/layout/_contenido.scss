@@ -1,0 +1,155 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenido {
+    background-color: v.$azulOscuro;
+    padding: 1.5rem 3rem 3rem 3rem;
+    border-radius: .5rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    height: min-content;
+
+    @include m.tablet {
+        align-self: flex-end;
+        position: relative;
+        padding: 2.5rem 4rem;
+    }
+
+    .contenido-texto {
+        text-align: center;
+
+
+        @include m.tablet {
+            text-align: unset;
+        }
+
+        span {
+            font-weight: bold;
+        }
+    }
+}
+
+.barra-progreso,
+.barra {
+    background-color: v.$azulClaro;
+    width: 100%;
+    height: 2rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    margin: 0 .2rem;
+
+
+    .barra-progreso {
+        color: v.$azulPalido;
+        text-align: right;
+        justify-content: flex-end;
+        background: linear-gradient(v.$gradiente);
+        height: 1.6rem;
+        animation: animacionCss 2s forwards;
+        -webkit-animation: animacionCss 2s forwards;
+        width: 75%;
+
+        .progreso {
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            margin-right: .2rem;
+            background-color: v.$azulPalido;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+        }
+    }
+}
+
+.informacion {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+        font-weight: bold;
+    }
+}
+
+.espacio-contenedor {
+    display: flex;
+    justify-content: center;
+
+    .espacio {
+        background-color: v.$blanco;
+        width: 45%;
+        position: absolute;
+        border-radius: .8rem;
+        -webkit-border-radius: .8rem;
+        -moz-border-radius: .8rem;
+        -ms-border-radius: .8rem;
+        -o-border-radius: .8rem;
+
+        @include m.tablet {
+            max-width: 35%;
+            min-width: max-content;
+            top: -6rem;
+            right: 4rem;
+            padding: .8rem 2rem;
+
+            .espacio-triangulo {
+                width: 0px;
+                height: 0px;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                border-width: 20px;
+                margin-bottom: -24px;
+                border-top: 25px solid transparent;
+                border-right: 25px solid v.$blanco;
+                border-bottom: 25px solid transparent;
+            }
+        }
+    }
+
+}
+
+.espacio-texto {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: flex;
+    color: v.$azulGrisaceo;
+    justify-content: center;
+    align-items: center;
+    gap: .9rem;
+
+    @include m.tablet {
+        margin: 0;
+        padding: .5rem 0;
+        font-size: 1.4rem;
+    }
+
+    span {
+        font-size: 4rem;
+        color: v.$azulMuyOscuruo;
+        font-weight: bold;
+
+        @include m.tablet {
+            font-size: 5rem;   
+        }
+    }
+}
+
+@keyframes animacionCss {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 75%;
+    }
+}  
